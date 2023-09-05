@@ -77,7 +77,7 @@
         return item;
     }
 
-    [Event.Client.BuildInput]
+    [GameEvent.Client.BuildInput]
     public void BuildInput()
     {
         if ( ItemContainer == null ) return;
@@ -111,7 +111,7 @@
         {
             var mouseDelta = Input.MouseDelta;
 
-            VirtualMouse += (mouseDelta * 10f * Time.Delta);
+	        VirtualMouse += mouseDelta;
             VirtualMouse = VirtualMouse.Clamp( Vector2.Zero, Screen.Size );
 
             var lx = VirtualMouse.x - Box.Left;
